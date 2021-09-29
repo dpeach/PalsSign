@@ -1,0 +1,6 @@
+user:
+    email: YOUR_EMAIL_ADDRESS # 'from' address
+    password: YOUR_EMAIL_PASSWORD # Server password. Best to use an app specific
+                           # password in case it gets compromised.
+    phoneAddress: PHONE_NUMBER(s) # 'To' addresses
+        # separated by a comma. Must have +COUNTRY_CODE_NUMBER and then the 10 digits.
