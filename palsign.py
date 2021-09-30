@@ -1,10 +1,14 @@
 #!/usr/bin/python3
 
+# You must call this file with an address that you want to send the message to.
+# For example: python3 palsign.py example@example.com
+    
 # from typing import Text
 import yaml
 import urllib.request
 import re
 import smtplib
+import sys
 
 url = 'https://www.palsweb.com/thought-for-the-day'
 with urllib.request.urlopen(url) as res:
@@ -23,10 +27,10 @@ def msg():
 # print(msg()) # Uncomment for debugging
 
 # Parameters (some of which are in a .yaml file stored separately).
-conf = yaml.load(open('./mail_sanitized.yaml'), Loader=yaml.BaseLoader)
+conf = yaml.load(open('./mail.yaml'), Loader=yaml.BaseLoader)
 email = conf['user']['email']
 pwd = conf['user']['password']
-phone = conf['user']['phoneAddress']
+phone = sys.argv[1]
 message = msg()
 
 # For sending text message. May hide this information in a separate file.
