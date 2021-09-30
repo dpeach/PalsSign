@@ -27,7 +27,7 @@ def msg():
 # print(msg()) # Uncomment for debugging
 
 # Parameters (some of which are in a .yaml file stored separately).
-conf = yaml.load(open('./mail.yaml'), Loader=yaml.BaseLoader)
+conf = yaml.load(open('./mail_sanitized.yaml'), Loader=yaml.BaseLoader)
 email = conf['user']['email']
 pwd = conf['user']['password']
 phone = sys.argv[1]
